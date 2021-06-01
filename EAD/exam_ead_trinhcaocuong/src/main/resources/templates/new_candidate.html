@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/template.html}">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Candidate Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script></head>
+
+<body>
+<div id="layoutSidenav_content" layout:fragment="content">
+    <h2>Save Candidate</h2>
+
+    <form action="#" th:action="@{/saveCandidate}" th:object="${candidate}" method="POST">
+        <input type="text" th:field="*{name}" placeholder="Candidate Name" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{dob}" placeholder="Date of Birth" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{phone}" placeholder="Phone" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{address}" placeholder="Address" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2">Save</button>
+        <button type="reset" class="btn btn-info col-2">Reset</button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/}">Back to Candidate List</a>
+</div>
+</body>
+
+</html>

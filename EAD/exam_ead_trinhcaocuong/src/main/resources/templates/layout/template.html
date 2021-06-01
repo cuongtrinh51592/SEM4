@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+
+    <!--css-->
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+    <!--js-->
+    <script th:src="@{/js/scrtips.js}"></script>
+</head>
+<body class="sb-nav-fixed">
+
+<div>
+<!--    <div layout:replace="layout/sidebar :: sidebarcontent">-->
+
+<!--    </div>-->
+
+    <div id="content">
+        <div layout:replace="layout/topnavbar :: topnavbarcontent">
+
+        </div>
+
+        <div layout:fragment="content" >
+            <h1>Content</h1>
+        </div>
+
+    </div>
+
+    <div layout:replace="layout/footer :: footercontent">
+
+    </div>
+</div>
+
+</body>
+</html>
